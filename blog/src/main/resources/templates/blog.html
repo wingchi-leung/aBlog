@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>wingchi的博客</title>
+    <div th:replace="common :: commonlink"></div>
+</head>
+<body>
+<div th:replace="common::nav"></div>
+<div class="container margin-b-lg">
+    <div class="row">
+        <!--    博客列表-->
+        <div class="col-sm-9">
+            <div class="article-body shadow-small">
+                <div class="article-header">
+                    <h1 class="article-title" th:text="${article.getTitle()}"></h1>
+                    <div class="article-meta">
+                        <span class="article-category" th:text="${article.getColumnName()}"><a href="#"></a></span>
+                        <span class="article-date" th:text="${article.getPublishTime()}"><a href="#"></a></span>
+<!--                        <span class="article-link"><a href="#">4 评论</a></span>-->
+                        <span class="views-count" th:text="${article.getPv()}"><a href="#"> 阅读</a></span>
+                    </div>
+                </div>
+                <div class="article-content clearfix">
+                    <div th:utext="${article.getHtmlContent()}"></div>
+                </div>
+            </div>
+        </div>
+        <!--  bar  -->
+        <div class="col-sm-3">
+            <div class="bar shadow-small text-center">
+                <img src="http://images.kudaompq.top/20210812230344.jpg" class="rounded-circle" alt="" style="width: 110px">
+                <div class="author-info-name margin-tb-normal">wingchi</div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <a href="#">
+                            <div>文章</div>
+                            <div>31</div>
+                        </a>
+                    </div>
+                    <div class="col-sm-4">
+                        <a href="">
+                            <div>标签</div>
+                            <div>36</div>
+                        </a>
+                    </div>
+                    <div class="col-sm-4">
+                        <a href="#">
+                            <div>分类</div>
+                            <div>9</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        <!-- 最新文章-->
+            <div class="bar shadow-small">
+                <h3 class="bar-title">最新文章</h3>
+                <ul class="bar-list" id="bar-article">
+                    <li><a href="#">Django 博客开发入门教程：前言</a></li>
+                    <li><a href="#">Django 博客开发入门教程：前言</a></li>
+                    <li><a href="#">Django 博客开发入门教程：前言</a></li>
+                    <li><a href="#">Django 博客开发入门教程：前言</a></li>
+                </ul>
+            </div>
+    </div>
+</div>
+
+<!--footer-->
+<div th:replace="common :: commonfooter">
+</div>
+
+
+
+<div th:replace="common::js"></div>
+
+
+
+</body>
+</html>

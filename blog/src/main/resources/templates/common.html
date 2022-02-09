@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head  th:fragment="commonlink">
+        <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+        <link rel="stylesheet" th:href="@{/css/kudaompq.css}">
+        <link rel="stylesheet" th:href="@{/css/custom.css}">
+        <!--    图标的cdn-->
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container margin-b-lg" th:fragment="nav">
+    <nav class="navbar navbar-expand-md border-bottom">
+        <!-- logo -->
+        <h1><a class="navbar-brand text-dark font-size-bg" href="#">wingchi的博客</a></h1>
+        <!-- 当屏幕小的时候自动收缩导航栏改用下拉列表 -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#headerNavbar">
+            <i class="fa fa-bars"></i>
+        </button>
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse justify-content-end" id="headerNavbar">
+            <ul class="navbar-nav font-size-lg">
+                <li class="nav-item">
+                    <a class="nav-link text-dark" th:href="@{/index}">首页</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" th:href="@{/archive}">归档</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" th:href="@{/categroy}">分类</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" th:href="@{/tag}">标签</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" th:href="@{/about}">关于我</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="#" ><i class="fa fa-search fa-fw"></i></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+    <div class="container footer" th:fragment="commonfooter">
+        <div class="row">
+            <div class="col-sm-12 text-center margin-tb-large">
+                <p class="footer-copyright">©2020 - 2021 By Wingchi</p>
+            </div>
+
+        </div>
+    </div>
+
+<div th:fragment="js">
+    <script th:src="@{/static/js/jquery-2.1.3.min.js}"></script>
+    <script th:src="@{/static/js/bootstrap.bundle.min.js}"></script>
+</div>
+
+</body>
+</html>

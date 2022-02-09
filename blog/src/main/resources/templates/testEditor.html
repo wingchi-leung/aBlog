@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Editor</title>
+</head>
+<body>
+    <div name="content" id="editor">
+        <p></p>
+    </div>
+<!--    th:href="@{/css/bootstrap.min.css}  static/js/ckeditor-5/ckeditor.js-->
+    <script th:src="@{/js/ckeditor.js}"></script>
+    <script>
+        var data;
+        ClassicEditor.create(document.querySelector('#editor'), {
+                ckfinder: {
+                    uploadUrl: '/'
+                }
+            }
+        ).then(editor => {
+            window.editor = editor;
+            data = editor.getData();
+            console.log(data);
+        } )
+            .catch(error => {
+                console.log(error);
+            } );
+    </script>
+</body>
+
+</html>

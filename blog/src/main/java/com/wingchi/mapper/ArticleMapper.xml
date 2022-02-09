@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wingchi.mapper.ArticleMapper">
+    <resultMap id="ArticleMap" type="com.wingchi.bean.Article" >
+        <id property="id" column="id"></id>
+        <result property="title" column="title"></result>
+        <result property="mdContent" column="md_content"></result>
+        <result property="publishTime" column="publish_time"></result>
+        <result property="lastModify" column="last_modify"></result>
+        <result property="summary" column="summary"></result>
+        <result property="pv" column="pv"></result>
+        <result property="authorId" column="author_id"></result>
+        <result property="columnName" column="column_name"></result>
+        <!--        查询标签-->
+        <collection property="tagList" ofType="com.wingchi.bean.Tag">
+            <id property="id" column="role_id"></id>
+            <result property="name" column="name"></result>
+        </collection>
+    </resultMap>
+
+    <select id="GetAuthorAllPost"  resultMap="ArticleMap" >
+        select a.*,b.title as column_name
+        from article a, `column` b where state=1 and a.author_id=#{id} and a.column_id = b.id
+    </select>
+
+    <select id="getPostById" resultMap="ArticleMap">
+        select a.*,b.title as column_name
+        from article a, `column` b where   a.id=#{id} and a.column_id = b.id
+    </select>
+
+    <select id="getTagsByAuthorId" resultType="Tag">
+        select *from tag where author_id = #{id}
+    </select>
+
+</mapper>

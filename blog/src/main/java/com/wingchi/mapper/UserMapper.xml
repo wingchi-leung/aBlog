@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wingchi.mapper.UserMapper">
+    <resultMap id="user" type="com.wingchi.bean.User" >
+        <id property="id" column="id"></id>
+        <result property="userName" column="username"></result>
+        <result property="passWord" column="password"></result>
+        <result property="createTime" column="createTime"></result>
+        <result property="lastLoginTime" column="lastLoginTime"></result>
+        <result property="enabled" column="enabled"></result>
+        <collection property="roles" ofType="com.wingchi.bean.Role">
+            <id property="id" column="role_id"></id>
+            <result property="name" column="name"></result>
+        </collection>
+    </resultMap>
+    
+    <select id="getUserByName"  resultMap="user">
+        select a.*,b.name,b.id as role_id from user a,role b, user_role c where username = #{username} and a.id=c.user_id and b.id=c.role_id
+    </select>
+
+    <select id="getAuthorNameById" parameterType="long" resultType="string" >
+        select username from user where id=#{id}
+    </select>
+</mapper>
