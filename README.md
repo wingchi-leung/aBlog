@@ -19,6 +19,12 @@
 - thymeleaf 
 - editor.md
 
+### 架构
+
+数据库表一览
+![image-dbtable](https://github.com/wingchi-leung/aBlog/blob/main/assert/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20220210105010.png)
+
+
 ### 项目效果图
 
 ![image-20220210102800614](https://github.com/wingchi-leung/aBlog/blob/main/assert/image-20220210102800614.png)
