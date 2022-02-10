@@ -32,7 +32,7 @@
 
 ### 项目信息
 
-本项目前端使用了https://github.com/Kudaompq/Blog-template提供的模板。在这里表示感谢🙇‍，如有侵权，联系立即删除。
+本项目前端使用了https://github.com/Kudaompq/Blog-template 提供的模板。在这里表示感谢🙇‍，如有侵权，联系立即删除。
 
 后端设计思路参考了 Vblog项目 https://github.com/lenve/VBlog ，感谢🙇‍
 
